@@ -1,0 +1,838 @@
+body {
+  color: #665;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial";
+  font-size: 16px;
+  margin: 0;
+}
+
+/* !!!!! Important- to create the layout for the whole website, grid-areas have been applied !!!!! */
+
+.header-container {
+  background-color: #9A252312;
+  padding: 1.5vw;
+}
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  backdrop-filter: blur(5px); /* Blurred background effect */
+  z-index: 1000; /* Ensure it sits on top of other content */
+  justify-content: center; /* Centering the modal horizontally */
+  align-items: center; /* Centering the modal vertically */
+}
+
+/* Modal Content Styling */
+.modal {
+  background: rgba(255, 255, 255, 0.15); /* Transparent white background */
+  backdrop-filter: blur(20px); /* Stronger blur effect on the modal */
+  -webkit-backdrop-filter: blur(20px); /* For webkit browsers */
+  padding: 30px; /* Padding inside the modal */
+  border-radius: 20px; /* Rounded corners */
+  width: 350px; /* Fixed width */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Light shadow */
+  position: relative; /* For positioning close button */
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  color: #fff; /* White text color */
+}
+
+/* Modal Title */
+.modal h2 {
+  text-align: center; /* Centering the title */
+  font-size: 24px; /* Title font size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Input Fields */
+.modal input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside input */
+  margin: 12px 0; /* Space around the input */
+  border-radius: 8px; /* Rounded corners */
+  border: none; /* Remove default border */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  color: #fff; /* White text */
+  font-size: 14px; /* Font size for inputs */
+}
+
+/* Placeholder Text Styling */
+.modal input::placeholder {
+  color: #ddd; /* Light gray placeholder text */
+}
+
+/* Button Styling */
+.modal button {
+  width: 100%; /* Full width button */
+  padding: 12px; /* Padding inside the button */
+  background-color: #4CAF50; /* Green button background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: bold; /* Bold font */
+  font-size: 16px; /* Font size for the button */
+  margin-top: 10px; /* Space above the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+/* Button Hover Effect */
+.modal button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Modal Paragraph */
+.modal p {
+  text-align: center; /* Centering the text */
+  margin-top: 15px; /* Space above the paragraph */
+  font-size: 14px; /* Font size */
+}
+
+/* Links inside Modal */
+.modal a {
+  color: #ffb347; /* Orange color for links */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold font for links */
+}
+
+/* Link Hover Effect */
+.modal a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* OTP Wrapper Styling */
+.otp-wrapper {
+  display: flex; /* Flexbox for OTP inputs */
+  gap: 10px; /* Space between inputs */
+  margin: 10px 0; /* Margin around OTP section */
+}
+
+/* OTP Input Styling */
+.otp-wrapper input {
+  flex: 2; /* Flexibly take up 2 parts */
+}
+
+/* OTP Button Styling */
+.otp-wrapper button {
+  flex: 1; /* Flexibly take up 1 part */
+  padding: 10px; /* Padding inside OTP button */
+  font-size: 14px; /* Font size for OTP button */
+  background-color: #ffa502; /* Orange background for OTP button */
+}
+
+
+/*interactive-uni-name-*/
+
+
+
+.unbreakable {
+    line-height: 1;
+    letter-spacing: -.07em;
+    color: #fff;
+}
+
+.ks {
+    font-size: 45px;
+    line-height: 1;
+    margin-top: -11px;
+    /* to prevent interative elements from crashing while using on various web browsers*/
+            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
+            transform: translateX(-1000%);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #fc0;
+}
+
+.animate .ks {
+    transform: translateX(0);
+}
+
+span {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.un {
+    transition: all .3s ease-in-out .7s;
+    letter-spacing: -.07em;
+}
+
+.animate .un {
+    font-size: 40px;
+    transform: scale(1.5,1.5);
+    opacity: 1;
+}
+
+.ba {
+  animation:slide 5s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #9A55B2 50%, #791B99 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+/*create the animation to move the background position which slowly transforms color. and transforms it back during animation time */
+.ba2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.ba3 {
+  animation-duration:5s;
+}
+/* transforms static background into pure CSS animation*/
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+.title-in-container {
+  font-size: 1.2vw;
+  color: #000000;
+  display: grid;
+  padding: 1.5vw;
+  grid-template-columns: 1fr 1fr; /* divide into 2 fractions, to place the items accordingly*/
+  grid-template-areas: /* each must be given the authentic name to associate to particular grid item*/
+  'container container2';
+}
+
+.container {
+ display: grid;
+ text-align: justify;
+}
+
+.container2 {
+  margin-top: 5vw;
+  display: grid;
+  text-align: justify;
+}
+
+/* Set a style for all buttons */
+button {
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px;
+ margin: 5px 0;
+ border: none;
+ cursor: pointer;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+ opacity: 0.7;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 600px) {
+ span.psw {
+   display: block;
+}
+}
+}
+
+
+.carousel {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 395px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    border: 3px solid #f1f1f1;
+}
+
+.slides {
+    user-select: none;
+    transition: all .7s ease-in-out;
+}
+
+ul.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* or whatever height fits your layout */
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Use 'cover' if you want to fill the area instead */
+}
+
+/*  fitted in control the position of the carousel. */
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 350px;
+    color: #fff;
+}
+/* allows to  alter the slide button position relative to its current position */
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+/* dots on the bottom of the image slider to make it clear which picture in a row is displayed */
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block;
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3 {
+	opacity: 1;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+/* created for a purpose to href connect all menu pages with home page */
+.btn-5{
+  font-size: 12px;
+  color: #fff;
+  background-color: #4CAF50;
+  text-decoration: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.btn-5:hover {
+  opacity: 0.5;
+}
+
+.staff-header-container {
+  grid-template-columns: 10fr 1fr;
+  background-color: #9A252312;
+  display:grid;
+  padding: 1.5vw;
+}
+
+
+
+.menu-blocks {
+  display:grid;
+  max-width: 100%;
+  padding-left: 17.8vw;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+/* transition is the key note, which allow CSS transitions and change property values in a timely manner from one value to another */
+nav ul li a {
+  background-color: #fc0;
+  font-weight: 700;
+  display: inline-block;
+  padding: 1rem;
+  color: #665;
+  text-decoration: none;
+  transition: transform 0.3s ease 0s;
+  transform-origin: 50% 0px 0px;
+  transform-style: preserve-3d;
+}
+
+/* transition effect to a button on hover */
+nav ul li a:hover {
+  background: #fff;
+  color: #000;
+  transform: rotateX(90deg) translateY(-22px);
+}
+/* transition property allows to change values over a specified duration */
+nav ul li a::before {
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  background: none repeat scroll 0% 0% #FF005B;
+  color: #FFF;
+  content: attr(data-hover);
+  transition: 0.3s ease 0s;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0px 0px;
+}
+
+/***************GENERAL****************/
+
+/* makes the item responsive and fit in the screen */
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+.container-table, .add-book-table {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1170px;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+}
+
+.special-font{
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #800080;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-radius: 3px;
+  color: #665;
+  display: table;
+  font-size: 15px;
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+}
+
+table td,
+table th {
+  border-top: 1px solid #eee;
+  display: table-cell;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table th {
+  border-bottom: 2px solid #eee;
+  vertical-align: middle;
+}
+
+.item-cell {
+  padding: 2px 12px;
+}
+
+/************FORMS & INPUTS************/
+
+.form-control {
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+input,
+select,
+textarea {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #665;
+  font-size: 15px;
+  line-height: 1.70;
+  max-width: 100%;
+  padding: 6px 12px;
+  position: relative;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #40bb93;
+  outline: medium none;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  color: #999;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.inline input,
+.inline select,
+.inline textarea {
+  display: inline-block;
+  width: auto;
+}
+
+/********** Search Bar **********/
+input[type="search"] {
+  border-width: 2px;
+  display: inline-block;
+  padding-left: 2.5em;
+  transition: width 0.4s ease-in-out 0s;
+  width: 150px;
+}
+
+input[type="search"]:focus {
+  width: 60%;
+}
+
+label[for="search"] {
+  bottom: 6px;
+  color: #999;
+  left: 1em;
+  position: absolute;
+  z-index: 1;
+}
+
+[contenteditable]:hover {
+  background-color: #f8f8f8;
+  cursor: cell;
+}
+
+[contenteditable]:focus {
+  background-color: #f8f8f8;
+}
+
+
+/* line image consisting of a progressive transition between two or more colors along a straight line. */
+  body {
+  	background: linear-gradient(0deg, rgba(0, 0, 200, 0.6) , rgba(0, 0, 200, 0) );
+  }
+
+  .background  {
+  	background: linear-gradient(120deg, rgba(50, 150, 100, 0.6) , rgba(0, 0, 100, 0) );
+  }
+
+  .container-line {
+  	background: linear-gradient(240deg, rgba(150, 50, 50, 0.6) , rgba(0, 0, 200, 0) );
+  	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  	padding: .5vw;
+  }
+  /* interactive text */
+
+*::after {
+  box-sizing: border-box;
+}
+
+.marquee {
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.marquee-inner {
+  display: flex;
+}
+
+.marquee-line {
+  color: #fff;
+  flex-shrink: 20;
+  margin: 0;
+  padding: 20px 15px;
+  min-width: 100%;
+  animation-name: marqueeLine;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+ 
+ 
+.section {
+  height: 100%;
+  margin: 0 auto;
+  font-family: "Roboto";
+ }
+
+  .section__title {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin: 0px;
+}
+  .toggle-button label {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+}
+  .toggle-button input {
+    display: none;
+}
+  .toggle-button__icon {
+    cursor: pointer;
+    pointer-events: none;
+}
+    .toggle-button__icon:before, .toggle-button__icon:after {
+      content: "";
+      position: absolute;
+      transition: 0.2s ease-out;
+}
+
+.toggle-button--taivas label {
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  transition: all 0.2s; }
+  .toggle-button--taivas label:before, .toggle-button--taivas label:after {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 110px;
+    transition: all 0.2s .1s ease-out; }
+  .toggle-button--taivas label:before {
+    content: attr(data-text); }
+
+.toggle-button--taivas input:checked ~ .toggle-button__icon:before {
+  animation: wave .7s ease-out; }
+
+.toggle-button--taivas input:checked ~ .toggle-button__icon:after {
+  opacity: 1;
+  animation: zoomFadeIn .4s;
+}
+
+.toggle-button--taivas .toggle-button__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: visible;
+}
+  .toggle-button--taivas .toggle-button__icon:before, .toggle-button--taivas .toggle-button__icon:after {
+    border-radius: 50%;
+}
+
+  .toggle-button--taivas .toggle-button__icon:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  .toggle-button--taivas .toggle-button__icon:after {
+    top: 4px;
+    left: 4px;
+    width: 60%;
+    height: 60%;
+    background: #61B136;
+    animation: zoomFadeOut .2s ease-out;
+    opacity: 0;
+    transition: none;
+}
+
+.toggle-button--taivas:hover input:not(:checked) ~ .toggle-button__icon {
+  animation: hover .2s; }
+
+.toggle-button--taivas:hover input:not(:checked) ~ label:before {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+
+@keyframes zoomFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes hover {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
+
+@media only screen and (max-width: 250px) {
+  .header-container{
+    font-size: 10px;
+  }
+
+  .ks{
+    font-size: 20px;
+  }
+
+  .animate .un{
+    font-size: 32px;
+  }
+
+  .marquee{
+    font-size: 9px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header-container{
+    font-size: 10px;
+  }
+
+  .ks{
+    font-size: 20px;
+  }
+
+  .animate .un{
+    font-size: 32px;
+  }
+
+  .marquee{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .toggle-button--taivas {
+    display: block;
+    width: 110px;
+    margin: 0 auto 10px auto;
+}
+
+    nav ul{
+      padding-left: 0px;
+      margin-top: 0px;
+    }
+    nav ul li {
+      width: 100%;
+      display:block;
+    }
+    nav ul li a{
+      width: 100%;
+      text-align:center;
+    }
+
+    .menu-blocks{
+      max-width: 100%;
+      padding-left: 0px;
+    }
+
+    .ks{
+      font-size: 24px;
+    }
+    .animate .un{
+      font-size: 40px;
+    }
+
+    .title-in-container{
+      grid-template-columns: 1fr;
+      grid-template-areas: 'container'
+                    'container2';
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+   .title-in-container {
+     font-size: 35px
+   }
+
+   .menu-blocks {
+     font-size: 35px;
+   }
+  }
