@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta charset='UTF-8'>
+    <title>NIMS eLibrary Portal</title>
+     <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <script src="booksFuncs.js"></script>
+    <div class="ba"></div>
+    <div class="ba ba2"></div>
+    <div class="ba ba3"></div>
+    <div class="content"></div>
+    <header class="header-container">
+      <span class="un unbreakable">NIMS eLibrary Portal</span>
+      <div class="ks">Organise, Access, and Empower Learning</div>
+    </header> 
+    <section class="title-in-container">
+      <nav>
+        <ul>
+          <li><a href="user.html" class="login-trigger" data-hover="users section">users section</a></li>
+          <li><a href="loans.html" class="login-trigger" data-hover="loans section">loans section</a></li>
+          <li><a href="books.html" class="login-trigger" data-hover="books section">books section</a></li>
+        </ul>
+      </nav>
+      <nav class="carousel">
+        <ul class="slides">
+          <input type="radio" name="radio-buttons" id="img-1" checked />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="https://assets.onecompiler.app/439wb93tu/43d2j7g9s/IMG20250409115930.jpg" alt="Engineering at Cambridge">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-3" class="prev-slide"><span>&lsaquo;</span></label>
+              <label for="img-2" class="next-slide"><span>&rsaquo;</span></label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-2" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="https://assets.onecompiler.app/439wb93tu/43d2j7g9s/IMG20250409115744.jpg" alt="Dragoon Jumping and Double Spears Technique">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-1" class="prev-slide"><span>&lsaquo;</span></label>
+              <label for="img-3" class="next-slide"><span>&rsaquo;</span></label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-3" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="https://assets.onecompiler.app/439wb93tu/43d2j7g9s/IMG20250409115719.jpg" alt="Science Staff">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-2" class="prev-slide"><span>&lsaquo;</span></label>
+              <label for="img-1" class="next-slide"><span>&rsaquo;</span></label>
+            </div>
+          </li>
+          <div class="carousel-dots">
+            <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+            <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+            <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+          </div>
+        </ul>
+      </nav>
+    </section>
+
+    <!--  Modal Code Injected Below (NO CHANGE ABOVE) -->
+    <div class="modal-overlay" id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:1000;">
+      <div style="background:white; padding:20px; border-radius:8px; width:300px; position:relative;">
+        <span style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;" onclick="closeLoginModal()">&times;</span>
+
+        <div id="loginForm">
+          <h2>Login</h2>
+          <form onsubmit="handleLogin(); return false;">
+            <input type="text" placeholder="Username or Mobile Number" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <input type="password" placeholder="Password" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <button type="submit" style="width:100%; padding:10px;">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+          </form>
+        </div>
+
+        <div id="registerForm" style="display:none;">
+          <h2>Register</h2>
+          <form onsubmit="handleRegister(); return false;">
+            <input type="text" placeholder="Full Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}" style="width:100%; padding:10px; margin-bottom:10px;">
+            <input type="email" placeholder="Email Address" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <input type="password" placeholder="Password" required minlength="6" style="width:100%; padding:10px; margin-bottom:10px;">
+            <div style="margin-top: 10px;">
+              <input type="text" placeholder="Enter OTP" required style="width:60%; padding:10px;">
+              <button type="button" onclick="alert('OTP Sent')">Send OTP</button>
+            </div>
+            <button type="submit" style="width:100%; padding:10px; margin-top:10px;">Register</button>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+<script>
+  let targetPage = "#"; // To store the clicked URL
+
+  function openLoginModal(href) {
+    targetPage = href; // Save clicked link
+    document.getElementById('loginModal').style.display = 'flex';
+    showLogin();
+  }
+
+  function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+  }
+
+  function showRegister() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+  }
+
+  function showLogin() {
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'block';
+  }
+
+  function handleLogin() {
+    alert('Logged in!');
+    window.location.href = targetPage;
+  }
+
+  function handleRegister() {
+    alert('Registered!');
+    window.location.href = targetPage;
+  }
+
+  // Attach to all section links
+  document.querySelectorAll('.login-trigger').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLoginModal(this.getAttribute('href'));
+    });
+  });
+</script>
+
+
+  </body>
+</html>
