@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta charset='UTF-8'>
+    <title>NIMS eLibrary Portal</title>
+  </head>
+  <body>
+    <header class="staff-header-container">
+      <div class="unbreakable-container">
+        <div class="unbreakable">
+          <span class="un">NIMS eLibrary Portal</span>
+        </div>
+        <div class="ks">Organise, Access, and Empower Learning</div>
+      </div>
+      <div><a href ="index.html" class="btn-5">Home</a></div>
+    </header>
+    
+    <section class="menu-blocks">
+      <nav>
+        <ul>
+          <li><a href="user.html" data-hover="users section">users section</a></li>
+          <li><a href="loans.html" data-hover="loans section">loans section</a></li>
+          <li><a href="books.html" data-hover="books section">books section</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="container-table">
+      <h1 class="special-font">Books Section</h1>
+      <h2>Search for books: by title or author</h2>
+      <div class="form-control">
+        <label><i class="icon-search"></i></label>
+        <input id="SearchTitle" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Title">
+        <input id="SearchAuthors" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Authors">
+        <button id="searchBookSubmit">Search</button>
+      </div>
+      <div class="table-responsive">
+        <table id="ordering-table" class="advanced-web-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>ISBN</th>
+              <th>Authors</th>
+              <th>Edit a Book</th>
+              <th>Note Column</th>
+            </tr>
+          </thead>
+          <tbody id="your-table-body-id"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="add-book-table">
+      <h1>Add a Book</h1>
+      <table class="table-responsive">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th>Add a Book</th>
+          </tr>
+        </thead>
+        <tbody class="data-table">
+          <tr>
+            <td><input class="addBookInput" type='text' placeholder="Title"></td>
+            <td><input class="addBookInput" type='text' placeholder="ISBN"></td>
+            <td><input class="addBookInput" type='text' placeholder="Author"></td>
+            <td><button id="addBookSubmit">Submit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="add-book-table">
+      <h1>Edit a Book’s Name, ISBN or Author</h1>
+      <table class="table-responsive">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th>Edit a Book</th>
+          </tr>
+        </thead>
+        <tbody class="data-table">
+          <tr>
+            <td><input class="addBookInput" type='text' placeholder="ID"></td>
+            <td><input class="addBookInput" type='text' placeholder="Title"></td>
+            <td><input class="addBookInput" type='text' placeholder="ISBN"></td>
+            <td><input class="addBookInput" type='text' placeholder="Author"></td>
+            <td><button>Submit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="add-book-table">
+      <h1>Delete a Book</h1>
+      <table class="table-responsive">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody class="data-table">
+          <tr>
+            <td><input class="deleteBookInput" type='text' placeholder="Book ID"></td>
+            <td><button id="SubmitDeleteBook">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <footer class="interactive">
+      <div class="background">
+        <div class="container-line">
+          <div class="marquee">
+            <div class="marquee-inner">
+              <p class="marquee-line">&copy; 2025 eLibrary Portal by swati singh</p>
+              <p class="marquee-line">&copy; 2025 eLibrary Portal by swati singh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="booksFuncs.js"></script>
+  </body>
+</html>
